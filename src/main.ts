@@ -17,8 +17,6 @@ async function run(): Promise<void> {
 
     const token = core.getInput('token', {required: true})
     const logUrl = core.getInput('log-url', {required: false}) || defaultUrl
-    const targetUrl =
-      core.getInput('target-url', {required: false}) || defaultUrl
     const description = core.getInput('description', {required: false}) || ''
     const deploymentId = core.getInput('deployment-id')
     const environmentUrl =
@@ -32,7 +30,6 @@ async function run(): Promise<void> {
       deployment_id: parseInt(deploymentId),
       state,
       log_url: logUrl,
-      target_url: targetUrl,
       description,
       environment_url: environmentUrl
     }

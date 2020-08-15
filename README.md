@@ -10,7 +10,6 @@ Works great with my other action to create Deployments, [mdouglass/deployment-ac
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
 | `state`           | The state to set the deployment to. Must be one of the below: "error" "failure" "inactive" "in_progress" "queued" "pending" "success" |
 | `token`           | GitHub token                                                                                                                          |
-| `target-url`      | (Optional) The target URL. This should be the URL of the deployment status event                                                            |
 | `log-url`      | (Optional) The log URL. This should be the URL of the deployment status event                                                            |
 | `description`     | (Optional) Descriptive message about the deployment                                                                                   |
 | `environment-url` | (Optional) Sets the URL for accessing your environment                                                                                |
@@ -39,7 +38,7 @@ jobs:
         id: deployment
         with:
           token: "${{ github.token }}"
-          target-url: http://my-app-url.com
+          environment-url: http://my-app-url.com
           environment: production
 
       - name: Deploy my app
@@ -51,7 +50,7 @@ jobs:
         uses: mdouglass/deployment-status@releases/v1
         with:
           token: "${{ github.token }}"
-          target-url: http://my-app-url.com
+          environment-url: http://my-app-url.com
           state: "success"
           deployment-id: ${{ steps.deployment.outputs.deployment-id }}
 
@@ -60,7 +59,7 @@ jobs:
         uses: mdouglass/deployment-status@releases/v1
         with:
           token: "${{ github.token }}"
-          target-url: http://my-app-url.com
+          environment-url: http://my-app-url.com
           state: "failure"
           deployment-id: ${{ steps.deployment.outputs.deployment-id }}
 ```

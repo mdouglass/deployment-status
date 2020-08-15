@@ -11,9 +11,6 @@ inputs:
   token:
     description: "Github repository token"
     required: true
-  target-url:
-    description: "Target url location"
-    required: false
   log-url:
     description: "Log url location"
     required: false
