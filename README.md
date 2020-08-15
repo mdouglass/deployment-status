@@ -10,7 +10,8 @@ Works great with my other action to create Deployments, [mdouglass/deployment-ac
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
 | `state`           | The state to set the deployment to. Must be one of the below: "error" "failure" "inactive" "in_progress" "queued" "pending" "success" |
 | `token`           | GitHub token                                                                                                                          |
-| `target-url`      | (Optional) The target URL. This should be the URL of the app once deployed                                                            |
+| `target-url`      | (Optional) The target URL. This should be the URL of the deployment status event                                                            |
+| `log-url`      | (Optional) The log URL. This should be the URL of the deployment status event                                                            |
 | `description`     | (Optional) Descriptive message about the deployment                                                                                   |
 | `environment-url` | (Optional) Sets the URL for accessing your environment                                                                                |
 | `deployment-id`   | The ID of the deployment to update                                                                                                    |
