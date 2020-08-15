@@ -70,7 +70,7 @@ Install dependencies with `npm install`.
 
 ## Building
 
-First build Typescript with `npm run build`. Then package to a single JS file with `npm run pack`. The `pack` step uses `ncc`(https://github.com/zeit/ncc) as specified in the Typescript GitHub Actions template.
+Build everything with `npm run all`.
 
 ## Testing
 
