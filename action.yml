@@ -11,16 +11,16 @@ inputs:
   token:
     description: "Github repository token"
     required: true
-  target_url:
+  target-url:
     description: "Target url location"
     required: false
-  environment_url:
+  environment-url:
     description: "Sets the URL for accessing your environment"
     required: false
   description:
     description: "Descriptive message about the deployment"
     required: false
-  deployment_id:
+  deployment-id:
     description: "The ID of the deployment"
     required: true
 runs:

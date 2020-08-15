@@ -10,10 +10,10 @@ Works great with my other action to create Deployments, [chrnorm/deployment-acti
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
 | `state`           | The state to set the deployment to. Must be one of the below: "error" "failure" "inactive" "in_progress" "queued" "pending" "success" |
 | `token`           | GitHub token                                                                                                                          |
-| `target_url`      | (Optional) The target URL. This should be the URL of the app once deployed                                                            |
+| `target-url`      | (Optional) The target URL. This should be the URL of the app once deployed                                                            |
 | `description`     | (Optional) Descriptive message about the deployment                                                                                   |
-| `environment_url` | (Optional) Sets the URL for accessing your environment                                                                                |
-| `deployment_id`   | The ID of the deployment to update                                                                                                    |
+| `environment-url` | (Optional) Sets the URL for accessing your environment                                                                                |
+| `deployment-id`   | The ID of the deployment to update                                                                                                    |
 
 ## Usage example
 
@@ -38,7 +38,7 @@ jobs:
         id: deployment
         with:
           token: "${{ github.token }}"
-          target_url: http://my-app-url.com
+          target-url: http://my-app-url.com
           environment: production
 
       - name: Deploy my app
@@ -50,18 +50,18 @@ jobs:
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: "${{ github.token }}"
-          target_url: http://my-app-url.com
+          target-url: http://my-app-url.com
           state: "success"
-          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          deployment-id: ${{ steps.deployment.outputs.deployment-id }}
 
       - name: Update deployment status (failure)
         if: failure()
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: "${{ github.token }}"
-          target_url: http://my-app-url.com
+          target-url: http://my-app-url.com
           state: "failure"
-          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          deployment-id: ${{ steps.deployment.outputs.deployment-id }}
 ```
 
 ## Development

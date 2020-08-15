@@ -16,11 +16,11 @@ async function run() {
     const defaultUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/commit/${context.sha}/checks`;
 
     const token = core.getInput("token", { required: true });
-    const url = core.getInput("target_url", { required: false }) || defaultUrl;
+    const url = core.getInput("target-url", { required: false }) || defaultUrl;
     const description = core.getInput("description", { required: false }) || "";
-    const deploymentId = core.getInput("deployment_id");
+    const deploymentId = core.getInput("deployment-id");
     const environmentUrl =
-      core.getInput("environment_url", { required: false }) || "";
+      core.getInput("environment-url", { required: false }) || "";
     const state = core.getInput("state") as DeploymentState;
 
     const client = new github.GitHub(token, { previews: ["flash", "ant-man"] });
